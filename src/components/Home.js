@@ -1,11 +1,15 @@
 import React from 'react'
+import logo from '../images/logo-mastercraft.svg'
 
 const Home = () => {
     return (
         <section className="home home-wrapper">
 
             <section className="wrapper section-1">
-                <img src="/images/logo-mastercraft.svg" alt="Logo Mastercraft" />
+                <div>
+                    <img src={logo} alt="Logo Mastercraft" className="logo-master" />
+                </div>
+                
                 <h1>Mastercraft Bamboo Monitor Riser</h1>
                 <p>A beautiful &amp; handcrafted monitor stand to reduce neck and eye strain.</p>
                 <div className="btn-wrap">
