@@ -1,12 +1,13 @@
 import React from 'react'
 import logo from '../images/logo-mastercraft.svg'
+import bookmark from '../images/icon-bookmark.svg'
 
 const Home = () => {
     return (
         <section className="home home-wrapper">
 
             <section className="wrapper section-1">
-                <div>
+                <div className="img-wrap">
                     <img src={logo} alt="Logo Mastercraft" className="logo-master" />
                 </div>
                 
@@ -15,7 +16,7 @@ const Home = () => {
                 <div className="btn-wrap">
                     <a href="#test" className="btn">Back this project</a>
                     <div className="bookmark-wrapper">
-                        <span><img src="/images/icon-bookmark.svg" alt="Icon Bookmark" /></span>
+                        <span><img src={bookmark} alt="Icon Bookmark" /></span>
                         <a href="#test" className="btn btn-bookmark">Bookmark</a>
                     </div>
                 </div>
