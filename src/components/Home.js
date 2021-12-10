@@ -55,9 +55,9 @@ const Home = () => {
                             <div className="card-title">Bamboo Stand</div>
                             <p className="more">Pledge $25 or more</p>
                         </div>
-                        <div className="description">You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.</div>
+                        <div className="description"><p>You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.</p></div>
                         <div className="qty-wrapper">
-                            <div className="qty">101 <span>left</span></div>
+                            <div className="qty"><p>101 <span>left</span></p></div>
                             <a href="#btn" className="btn">Select Reward</a>
                         </div>
                     </div>
@@ -66,20 +66,20 @@ const Home = () => {
                             <div className="card-title">Black Edition Stand</div>
                             <p className="more">Pledge $75 or more</p>
                         </div>
-                        <div className="description">You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</div>
+                        <div className="description"><p>You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p></div>
                         <div className="qty-wrapper">
-                            <div className="qty">64 <span>left</span></div>
+                            <div className="qty"><p>64 <span>left</span></p></div>
                             <a href="#btn" className="btn">Select Reward</a>
                         </div>
                     </div>
-                    <div className="card card-item-3">
+                    <div className="card card-item-3 out-of-stock">
                         <div className="card-title-wrapper">
                             <div className="card-title">Mahogany Special Edition</div>
                             <p className="more">Pledge $200 or more</p>
                         </div>
-                        <div className="description">You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</div>
+                        <div className="description"><p>You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p></div>
                         <div className="qty-wrapper">
-                            <div className="qty">0 <span>left</span></div>
+                            <div className="qty"><p>0 <span>left</span></p></div>
                             <a href="#btn" className="btn">Out of Stock</a>
                         </div>
                     </div>
