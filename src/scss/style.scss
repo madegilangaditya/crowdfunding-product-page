@@ -16,6 +16,8 @@ $card-border-color: #e1e0e0;
 body{
     background:#f5f5f5;
     font-family: $primary-font;
+    padding-bottom: 80px;
+    position: relative;
 }
 
 h1{
@@ -35,19 +37,11 @@ p{
     line-height: 1.5;
 }
 
-.banner{
-    min-height: 300px;
-    background: center / cover no-repeat url('/images/image-hero-mobile.jpg');
-}
-
-.main-menu{
-    display: none;
-}
-
 .site-header,
 .wrapper{
     margin: 0 24px;
     padding: 38px 23px;
+    position: relative;
 }
 
 .wrapper{
@@ -55,13 +49,66 @@ p{
     border: 1px solid $card-border-color;
     margin-bottom: 24px;
     background:$white;
-    position: relative;
 }
 
+
+// Header
 .site-header{
     padding: 30px 0px;
     display: flex;
     justify-content: space-between;
+    z-index: 2;
+}
+
+.banner{
+    min-height: 300px;
+    background: center / cover no-repeat url('/images/image-hero-mobile.jpg');
+}
+
+.main-navigation-wrap{
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    background: $white;
+    border-radius: 8px;
+    top: 65px;
+    z-index: -1;
+
+    .main-menu{
+        list-style: none;
+
+        .menu-item{
+            padding: 25px;
+            border-bottom: 1px solid $card-border-color;
+        }
+    }
+}
+
+.main-navigation-wrap{
+    transition: all .3s linear;
+}
+
+.bg-overlay{
+    transition: all .1s linear;
+}
+
+.main-navigation-wrap.active{
+    opacity: 1;
+    z-index: 2;
+}
+
+.bg-overlay{
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: $neutral;
+}
+
+.bg-overlay.active{
+    opacity: 0.3;
+    z-index: 1;
 }
 
 // Section 1
@@ -146,10 +193,6 @@ p{
 }
 
 // Section 3
-.section-3{
-    margin-bottom: 80px;
-}
-
 .card{
     padding: 25px;
     border: 1px solid $card-border-color;
