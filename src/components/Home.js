@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../images/logo-mastercraft.svg'
 import bookmark from '../images/icon-bookmark.svg'
+import Button from './Button.js'
 
 const Home = ({btnClick}) => {
     return (
@@ -14,10 +15,10 @@ const Home = ({btnClick}) => {
                 <h1>Mastercraft Bamboo Monitor Riser</h1>
                 <p>A beautiful &amp; handcrafted monitor stand to reduce neck and eye strain.</p>
                 <div className="btn-wrap">
-                    <a id="openModal" href="#test" className="btn" onClick={btnClick}>Back this project</a>
+                    <Button idBtn={'openModal'} text={'Back this project'} clicked={btnClick} />
                     <div className="bookmark-wrapper">
                         <span><img src={bookmark} alt="Icon Bookmark" /></span>
-                        <a href="#test" className="btn btn-bookmark">Bookmark</a>
+                        <Button text={'Bookmark'} addClass={'btn-bookmark'} />
                     </div>
                 </div>
             </section>
@@ -58,7 +59,7 @@ const Home = ({btnClick}) => {
                         <div className="description"><p>You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.</p></div>
                         <div className="qty-wrapper">
                             <div className="qty"><p>101 <span>left</span></p></div>
-                            <a href="#btn" className="btn">Select Reward</a>
+                            <Button text={'Select Reward'} />
                         </div>
                     </div>
                     <div className="card card-item-2">
@@ -69,7 +70,7 @@ const Home = ({btnClick}) => {
                         <div className="description"><p>You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p></div>
                         <div className="qty-wrapper">
                             <div className="qty"><p>64 <span>left</span></p></div>
-                            <a href="#btn" className="btn">Select Reward</a>
+                            <Button text={'Select Reward'} />
                         </div>
                     </div>
                     <div className="card card-item-3 out-of-stock">
@@ -80,7 +81,7 @@ const Home = ({btnClick}) => {
                         <div className="description"><p>You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p></div>
                         <div className="qty-wrapper">
                             <div className="qty"><p>0 <span>left</span></p></div>
-                            <a href="#btn" className="btn">Out of Stock</a>
+                            <Button text={'Out of Stock'} />
                         </div>
                     </div>
                 </div>
