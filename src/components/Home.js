@@ -2,7 +2,7 @@ import React from 'react'
 import logo from '../images/logo-mastercraft.svg'
 import bookmark from '../images/icon-bookmark.svg'
 
-const Home = () => {
+const Home = ({btnClick}) => {
     return (
         <section className="home home-wrapper">
 
@@ -14,7 +14,7 @@ const Home = () => {
                 <h1>Mastercraft Bamboo Monitor Riser</h1>
                 <p>A beautiful &amp; handcrafted monitor stand to reduce neck and eye strain.</p>
                 <div className="btn-wrap">
-                    <a href="#test" className="btn">Back this project</a>
+                    <a id="openModal" href="#test" className="btn" onClick={btnClick}>Back this project</a>
                     <div className="bookmark-wrapper">
                         <span><img src={bookmark} alt="Icon Bookmark" /></span>
                         <a href="#test" className="btn btn-bookmark">Bookmark</a>

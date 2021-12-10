@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Modal = () => {
+const Modal = ({onShow}) => {
     return (
-        <section className="modal modal-wrapper">
+        <section className={`modal modal-wrapper ${onShow ?'active' : ''}`}>
             <section className="wrapper">
                 <div className="title-modal">
                     <h3>Back this project</h3>
