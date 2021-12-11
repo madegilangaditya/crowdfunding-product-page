@@ -1,7 +1,9 @@
 import React from 'react'
 import logo from '../images/logo-mastercraft.svg'
 import bookmark from '../images/icon-bookmark.svg'
-import Button from './Button.js'
+import Button from './Button'
+import Count from './Count'
+import Cards from './Cards'
 
 const Home = ({btnClick}) => {
     return (
@@ -26,18 +28,20 @@ const Home = ({btnClick}) => {
             
             <section className="wrapper section-2">
                 <div className="count-wrapper">
-                    <div className="total-count">
-                        <p className="big-number">$89,914 </p>
-                        <p className="number-description">of $100,000 backed</p>
-                    </div>
-                    <div className="total-count">
-                        <p className="big-number">5,007</p>
-                        <p className="number-description">total backers</p>
-                    </div>
-                    <div className="total-count">
-                        <p className="big-number">56</p>
-                        <p className="number-description">days left</p>
-                    </div>
+                    <Count 
+                        bigNumber="$89,914"
+                        description="of $100,000 backed"
+                    />
+                    
+                    <Count 
+                        bigNumber="5,007"
+                        description="total backers"
+                    />
+
+                    <Count 
+                        bigNumber="56"
+                        description="days left"
+                    />
                 </div>
                 <div className="scroll-bar">
                     <progress id="count" value="89.914" max="100">  </progress>
@@ -50,41 +54,9 @@ const Home = ({btnClick}) => {
                     <p>The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen to a more comfortable viewing height Placing your monitor at eye level has the potential to improve your posture and make you more comfortable while at work, helping you stay focused on the task at hand.</p>
                     <p>Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer to allow notepads, pens, and USB sticks to be stored under the stand.</p>
                 </div>
-                <div className="content-wrap cards">
-                    <div className="card card-item-1">
-                        <div className="card-title-wrapper">
-                            <div className="card-title">Bamboo Stand</div>
-                            <p className="more">Pledge $25 or more</p>
-                        </div>
-                        <div className="description"><p>You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.</p></div>
-                        <div className="qty-wrapper">
-                            <div className="qty"><p>101 <span>left</span></p></div>
-                            <Button text={'Select Reward'} />
-                        </div>
-                    </div>
-                    <div className="card card-item-2">
-                        <div className="card-title-wrapper">
-                            <div className="card-title">Black Edition Stand</div>
-                            <p className="more">Pledge $75 or more</p>
-                        </div>
-                        <div className="description"><p>You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p></div>
-                        <div className="qty-wrapper">
-                            <div className="qty"><p>64 <span>left</span></p></div>
-                            <Button text={'Select Reward'} />
-                        </div>
-                    </div>
-                    <div className="card card-item-3 out-of-stock">
-                        <div className="card-title-wrapper">
-                            <div className="card-title">Mahogany Special Edition</div>
-                            <p className="more">Pledge $200 or more</p>
-                        </div>
-                        <div className="description"><p>You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p></div>
-                        <div className="qty-wrapper">
-                            <div className="qty"><p>0 <span>left</span></p></div>
-                            <Button text={'Out of Stock'} />
-                        </div>
-                    </div>
-                </div>
+
+                <Cards/>
+
             </section>
 
         </section>
