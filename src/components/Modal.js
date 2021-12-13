@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from './Button'
+import CardModal from './CardModal'
 
 const Modal = ({onShow}) => {
     
@@ -12,48 +12,43 @@ const Modal = ({onShow}) => {
                     <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
                 </div>
                 <div className="cards" >
-                    <label htmlFor="support1">
-                        <div className={`card `} htmlFor="support1">
-                            <div className='input-wrapper'>
-                                <div className='radio-wrapper'>
-                                    <input id="support1" type="radio" name='support' value='0'/>
-                                </div>
-                                <div className="card-title-wrapper">
-                                    <div className="card-title"> Pledge with no reward</div>
-                                    <p className="more"></p>
-                                </div>
-                            </div>    
-                            <div className="description"><p>Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.</p></div>
-                            <div className="qty-wrapper">
-                                <div className="qty"><p> <span>left</span></p></div>
-                                <Button text={'Select Reward'} />
-                            </div>
-                        </div>
-                    </label>
-                    
+                    <CardModal
+                        radioId='support1'
+                        cardClass='no-reward'
+                        title='Pledge with no reward'
+                        description="Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email."
+                        qty='0'
+                        price='0'
+                    />
 
-                    <label htmlFor="support2">
-                        <div className={`card `} htmlFor="support2">
-                            <div className='input-wrapper'>
-                                <div className='radio-wrapper'>
-                                    <input id="support2" type="radio" name='support' value='0'/>
-                                </div>
-                                <div className="card-title-wrapper">
-                                    <div className="card-title"> Pledge with no reward</div>
-                                    <p className="more"></p>
-                                </div>
-                            </div>    
-                            <div className="description"><p>Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.</p></div>
-                            <div className="qty-wrapper">
-                                <div className="qty"><p> <span>left</span></p></div>
-                                <Button text={'Select Reward'} />
-                            </div>
-                        </div>
-                    </label>
+                    <CardModal
+                        radioId='support2'
+                        title='Bamboo Stand'
+                        subtitle="Pledge $25 or more"
+                        description="You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list."
+                        qty='101'
+                        price='25'
+                    />
+
+                    <CardModal
+                        radioId='support3'
+                        title='Black Edition Stand'
+                        subtitle="Pledge $75 or more"
+                        description="You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included."
+                        qty='64'
+                        price='75'
+                    />
+
+                    <CardModal
+                        radioId='support3'
+                        cardClass='out-of-stock'
+                        title='Mahogany Special Edition'
+                        subtitle="Pledge $200 or more"
+                        description="You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included."
+                        qty='0'
+                        price='200'
+                    />
                     
-                    <div className="card card-item2"></div>
-                    <div className="card card-item3"></div>
-                    <div className="card card-item4"></div>
                 </div>
             </section>
         </section>
