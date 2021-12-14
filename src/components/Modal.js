@@ -18,7 +18,7 @@ const Modal = ({onShow}) => {
                         title='Pledge with no reward'
                         description="Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email."
                         qty='0'
-                        price='0'
+                        price={0}
                     />
 
                     <CardModal
@@ -27,7 +27,7 @@ const Modal = ({onShow}) => {
                         subtitle="Pledge $25 or more"
                         description="You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list."
                         qty='101'
-                        price='25'
+                        price={25}
                     />
 
                     <CardModal
@@ -46,7 +46,7 @@ const Modal = ({onShow}) => {
                         subtitle="Pledge $200 or more"
                         description="You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included."
                         qty='0'
-                        price='200'
+                        price={200}
                     />
                     
                 </div>

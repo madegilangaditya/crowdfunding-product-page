@@ -16,18 +16,22 @@ const CardModal = ({radioId, cardClass, title, subtitle, description, qty, price
                     </div>
                 </div>    
                 <div className="description"><p>{description}</p></div>
+                {price !== 0 ? 
                 <div className="qty-wrapper">
                     <div className="qty"><p>{qty} <span>left</span></p></div>   
-                </div>
+                </div> : ""}
+                
+                {price !== 0 ? 
                 <div className="pledge-wrapper">
                     <p>Enter your pledge</p>
                     <div className="pledge-btn-wrapper">
-                        <div>
-                            <p>$ <span>{price}</span></p>
+                        <div className="pledge-input-wrapper">
+                            <input type="number" name="pledge" id="" defaultValue={price} />
                         </div>
                         <Button text={'Continue'} />
                     </div>
-                </div>
+                </div> : ""}
+                
             </div>
         </label>
     )
