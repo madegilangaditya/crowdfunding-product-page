@@ -4,19 +4,20 @@ import Button from './Button'
 const CardModal = ({radioId, cardClass, title, subtitle, description, qty, price}) => {
     return (
         <label htmlFor={radioId}>
-            <div className={`card ${cardClass ? cardClass : ''}`}>
+            <div className={`card ${cardClass ? cardClass : ''} ${subtitle ? '' : 'no-subtitle'}`}>
                 <div className='input-wrapper'>
                     <div className='radio-wrapper'>
                         <input id={radioId} type="radio" name='support' value={price}/>
                     </div>
                     <div className="card-title-wrapper">
                         <div className="card-title">{title}</div>
-                        <p className="more">{subtitle}</p>
+                        {subtitle?<p className="more">{subtitle}</p> : ''}
+                        
                     </div>
                 </div>    
                 <div className="description"><p>{description}</p></div>
                 <div className="qty-wrapper">
-                    <div className="qty">{qty}<p> <span>left</span></p></div>   
+                    <div className="qty"><p>{qty} <span>left</span></p></div>   
                 </div>
                 <div className="pledge-wrapper">
                     <p>Enter your pledge</p>
