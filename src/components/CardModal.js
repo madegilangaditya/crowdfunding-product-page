@@ -1,10 +1,14 @@
 import React from 'react'
+
 import Button from './Button'
 
-const CardModal = ({radioId, cardClass, title, subtitle, description, qty, price}) => {
+const CardModal = ({radioId, cardClass, title, subtitle, description, qty, price, onCardClick}) => {
+
+
+
     return (
         <label htmlFor={radioId}>
-            <div className={`card ${cardClass ? cardClass : ''} ${subtitle ? '' : 'no-subtitle'}`}>
+            <div className={`card ${cardClass ? cardClass : ''} ${subtitle ? '' : 'no-subtitle'}`} >
                 <div className='input-wrapper'>
                     <div className='radio-wrapper'>
                         <input id={radioId} type="radio" name='support' value={price}/>
@@ -21,8 +25,8 @@ const CardModal = ({radioId, cardClass, title, subtitle, description, qty, price
                     <div className="qty"><p>{qty} <span>left</span></p></div>   
                 </div> : ""}
                 
-                {price !== 0 ? 
-                <div className="pledge-wrapper">
+                {qty !== 0 ? 
+                <div className={`pledge-wrapper ${onCardClick === radioId ? 'active' : ''}`}>
                     <p>Enter your pledge</p>
                     <div className="pledge-btn-wrapper">
                         <div className="pledge-input-wrapper">

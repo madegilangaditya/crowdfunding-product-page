@@ -1,8 +1,12 @@
 import React from 'react'
+import { useState } from 'react'
 import CardModal from './CardModal'
 
 const Modal = ({onShow}) => {
-    
+    const [card, setCard] = useState()
+    const cardClick = (id) =>{
+        setCard(id)
+    }
 
     return (
         <section className={`modal modal-wrapper ${onShow ?'active' : ''}`}>
@@ -11,14 +15,19 @@ const Modal = ({onShow}) => {
                     <h3>Back this project</h3>
                     <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
                 </div>
-                <div className="cards" >
+                <div className="cards" onClick={ (e) => {
+                            cardClick(e.target.id)
+                            console.log(e)
+                        }}>
                     <CardModal
                         radioId='support1'
                         cardClass='no-reward'
                         title='Pledge with no reward'
                         description="Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email."
-                        qty='0'
+                        qty={0}
                         price={0}
+                        onCardClick = {card}
+                        
                     />
 
                     <CardModal
@@ -26,8 +35,9 @@ const Modal = ({onShow}) => {
                         title='Bamboo Stand'
                         subtitle="Pledge $25 or more"
                         description="You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list."
-                        qty='101'
+                        qty={101}
                         price={25}
+                        onCardClick = {card}
                     />
 
                     <CardModal
@@ -35,18 +45,20 @@ const Modal = ({onShow}) => {
                         title='Black Edition Stand'
                         subtitle="Pledge $75 or more"
                         description="You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included."
-                        qty='64'
-                        price='75'
+                        qty={61}
+                        price={75}
+                        onCardClick = {card}
                     />
 
                     <CardModal
-                        radioId='support3'
+                        radioId='support4'
                         cardClass='out-of-stock'
                         title='Mahogany Special Edition'
                         subtitle="Pledge $200 or more"
                         description="You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included."
-                        qty='0'
+                        qty={0}
                         price={200}
+                        onCardClick = {card}
                     />
                     
                 </div>
