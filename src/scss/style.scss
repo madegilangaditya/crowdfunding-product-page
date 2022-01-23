@@ -239,6 +239,9 @@ p{
 
 // Modal style
 .modal {
+    opacity: 0;
+    transition: .3s all ease-in-out;
+    
     .title-modal{
 
         h3{
@@ -290,11 +293,16 @@ p{
     
     .pledge-wrapper {
         position:relative;
+        display: none;
 
         p{
             text-align: center;
             padding-top: 35px;
         }
+    }
+
+    .pledge-wrapper.active{
+        display: block;
     }
     
     .pledge-wrapper:before{
@@ -346,4 +354,8 @@ p{
         text-align: center;
     }
     
+}
+
+.modal.active{
+    opacity: 1;
 }

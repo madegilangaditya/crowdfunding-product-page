@@ -7,8 +7,13 @@ function App() {
 
   const [showModal, setShowModal] = useState(false)
   const openModalClick = ()=> {
-    
+    const bgWrap = document.querySelector('.bg-overlay')  
+
     setShowModal(!showModal) 
+    
+    if(!bgWrap.classList.contains('.active')){
+      bgWrap.classList.add('active');
+    }
   }
 
   return (
