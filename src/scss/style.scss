@@ -339,13 +339,12 @@ p{
 
     .pledge-btn-wrapper{
         display:flex;
-        flex-wrap:wrap;
+        flex-wrap:nowrap;
         gap: 20px;
         justify-content: center;
     }
 
     .pledge-input-wrapper{
-        flex:0 0 30%;
         position: relative;
 
         &::before{
@@ -358,7 +357,7 @@ p{
 
         input[type='number']{
             width: 100%;
-            padding: 20px 25px;
+            padding: 20px 0px;
             padding-left: 40px;
             border-radius: 30px;
             border: 1px solid $card-border-color;
