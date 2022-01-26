@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
 import CardModal from './CardModal'
+import closeModalIcon from '../images/icon-close-modal.svg'
 
-const Modal = ({onShow}) => {
+const Modal = ({onShow, onClose}) => {
     const [card, setCard] = useState()
     const cardClick = (id) =>{
         setCard(id)
@@ -12,6 +13,7 @@ const Modal = ({onShow}) => {
         <section className={`modal modal-wrapper ${onShow ?'active' : ''}`}>
             <section className="wrapper">
                 <div className="title-modal">
+                    <span className='close-modal' onClick={onClose}><img src={closeModalIcon} alt="close modal" /></span>
                     <h3>Back this project</h3>
                     <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
                 </div>

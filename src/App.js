@@ -7,13 +7,9 @@ function App() {
 
   const [showModal, setShowModal] = useState(false)
   const openModalClick = ()=> {
-    const bgWrap = document.querySelector('.bg-overlay')  
 
     setShowModal(!showModal) 
     
-    if(!bgWrap.classList.contains('.active')){
-      bgWrap.classList.add('active');
-    }
   }
 
   return (
@@ -21,7 +17,7 @@ function App() {
       <div className='bg-overlay'></div>
       <Header/>
       <Home btnClick={openModalClick} />
-      <Modal onShow={showModal}/>
+      <Modal onShow={showModal} onClose={openModalClick}/>
     </div>
   );
 }

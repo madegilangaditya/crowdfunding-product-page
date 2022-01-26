@@ -241,11 +241,29 @@ p{
 .modal {
     opacity: 0;
     transition: .3s all ease-in-out;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    top: 0;
+    overflow: auto;
+    padding-bottom: 200px;
+    z-index: -1;
+
+    .wrapper{
+        top: 25%;
+    }
     
     .title-modal{
+        position: relative;
 
         h3{
             margin-bottom: 30px;
+        }
+
+        .close-modal{
+            position: absolute;
+            right: 0;
         }
     }
     
@@ -358,4 +376,5 @@ p{
 
 .modal.active{
     opacity: 1;
+    z-index: 9;
 }
