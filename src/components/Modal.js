@@ -2,6 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import CardModal from './CardModal'
 import closeModalIcon from '../images/icon-close-modal.svg'
+import checkIcon from '../images/icon-check.svg'
+import Button from './Button'
 
 const Modal = ({onShow, onClose}) => {
     const [card, setCard] = useState()
@@ -11,7 +13,7 @@ const Modal = ({onShow, onClose}) => {
 
     return (
         <section className={`modal modal-wrapper ${onShow ?'active' : ''}`}>
-            <section className="wrapper">
+            <div className="pledge-modal wrapper">
                 <div className="title-modal">
                     <span className='close-modal' onClick={onClose}><img src={closeModalIcon} alt="close modal" /></span>
                     <h3>Back this project</h3>
@@ -64,7 +66,13 @@ const Modal = ({onShow, onClose}) => {
                     />
                     
                 </div>
-            </section>
+            </div>
+            <div className='thankyou-wrapper wrapper'>
+                <img src={checkIcon} alt="Success Icon" />
+                <h3>Thanks for your support!</h3>
+                <p>Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign is completed.</p>
+                <Button text={'Got it!'} clicked={onClose} />
+            </div>
         </section>
     )
 }
