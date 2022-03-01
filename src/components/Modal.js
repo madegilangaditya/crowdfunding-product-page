@@ -68,9 +68,12 @@ const Modal = ({onShow, onClose}) => {
                 </div>
             </div>
             <div className='thankyou-wrapper wrapper'>
-                <img src={checkIcon} alt="Success Icon" />
-                <h3>Thanks for your support!</h3>
-                <p>Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign is completed.</p>
+                <div className="title-modal">
+                    <img src={checkIcon} alt="Success Icon" />
+                    <h3>Thanks for your support!</h3>
+                    <p>Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign is completed.</p>
+                </div>
+                
                 <Button text={'Got it!'} clicked={onClose} />
             </div>
         </section>

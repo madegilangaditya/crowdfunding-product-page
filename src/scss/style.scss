@@ -377,6 +377,19 @@ p{
     
 }
 
+// Thankyou modal
+.thankyou-wrapper{
+    text-align: center;
+
+    img{
+        margin-bottom: 30px;
+    }
+
+    .btn{
+        padding: 20px 35px;
+    }
+}
+
 .modal.active{
     opacity: 1;
     z-index: 9;
