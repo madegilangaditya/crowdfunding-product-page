@@ -11,6 +11,11 @@ const Modal = ({onShow, onClose}) => {
         setCard(id)
     }
 
+    const [thankyou, setThankyou] = useState(false)
+    const cardConfirm = () =>{
+        setThankyou = !thankyou
+    }
+
     return (
         <section className={`modal modal-wrapper ${onShow ?'active' : ''}`}>
             <div className="pledge-modal wrapper">
