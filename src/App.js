@@ -7,8 +7,10 @@ function App() {
 
   const [showModal, setShowModal] = useState(false)
   const openModalClick = ()=> {
-
-    setShowModal(!showModal) 
+    const pledge =  document.querySelector('.pledge-modal')
+    setShowModal(!showModal)
+    setTimeout(()=>pledge.classList.remove('hide'),1000) 
+    
     
   }
   

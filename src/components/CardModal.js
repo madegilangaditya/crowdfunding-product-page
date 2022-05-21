@@ -2,7 +2,7 @@ import React from 'react'
 
 import Button from './Button'
 
-const CardModal = ({radioId, cardClass, title, subtitle, description, qty, price, onCardClick}) => {
+const CardModal = ({radioId, cardClass, title, subtitle, description, qty, price, onCardClick,contClick}) => {
     const handleClick = (e) => {
         e.stopPropagation();  //  <------ Here is the magic
         // this.props.onClick();
@@ -35,7 +35,7 @@ const CardModal = ({radioId, cardClass, title, subtitle, description, qty, price
                         <div className="pledge-input-wrapper">
                             <input type="number" name="pledge" id="" defaultValue={price} />
                         </div>
-                        <Button text={'Continue'} />
+                        <Button text={'Continue'} clicked={contClick}/>
                     </div>
                 </div> : ""}
                 

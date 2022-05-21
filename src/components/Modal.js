@@ -1,11 +1,13 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import CardModal from './CardModal'
 import closeModalIcon from '../images/icon-close-modal.svg'
 import checkIcon from '../images/icon-check.svg'
 import Button from './Button'
 
+
 const Modal = ({onShow, onClose}) => {
+    const pledge =  document.querySelector('.pledge-modal')
     const [card, setCard] = useState()
     const cardClick = (id) =>{
         setCard(id)
@@ -13,12 +15,27 @@ const Modal = ({onShow, onClose}) => {
 
     const [thankyou, setThankyou] = useState(false)
     const cardConfirm = () =>{
-        setThankyou = !thankyou
+        setThankyou(!thankyou)
+        pledge.classList.contains('hide')?pledge.classList.remove('hide'):pledge.classList.add('hide')
     }
+
+    // const modalClose = () =>{
+    //     setThankyou(false)
+    // }
+    // ${thankyou ? 'hide':''}
+    useEffect(() => {
+        setThankyou(false)
+        
+    }, [onClose])
+
+    // useEffect(() => {
+    //     const pledge =  document.querySelector('.pledge-modal')
+    //     pledge.classList.remove('hide')
+    // }, [onShow])
 
     return (
         <section className={`modal modal-wrapper ${onShow ?'active' : ''}`}>
-            <div className="pledge-modal wrapper">
+            <div className={`pledge-modal wrapper `}>
                 <div className="title-modal">
                     <span className='close-modal' onClick={onClose}><img src={closeModalIcon} alt="close modal" /></span>
                     <h3>Back this project</h3>
@@ -36,7 +53,7 @@ const Modal = ({onShow, onClose}) => {
                         qty={0}
                         price={0}
                         onCardClick = {card}
-                        
+                        contClick = {thankyou}
                     />
 
                     <CardModal
@@ -47,6 +64,7 @@ const Modal = ({onShow, onClose}) => {
                         qty={101}
                         price={25}
                         onCardClick = {card}
+                        contClick = {cardConfirm}
                     />
 
                     <CardModal
@@ -57,6 +75,7 @@ const Modal = ({onShow, onClose}) => {
                         qty={61}
                         price={75}
                         onCardClick = {card}
+                        contClick = {cardConfirm}
                     />
 
                     <CardModal
@@ -68,11 +87,12 @@ const Modal = ({onShow, onClose}) => {
                         qty={0}
                         price={200}
                         onCardClick = {card}
+                        contClick = {cardConfirm}
                     />
                     
                 </div>
             </div>
-            <div className='thankyou-wrapper wrapper'>
+            <div className={`thankyou-wrapper wrapper ${thankyou ? 'active':''}`}>
                 <div className="title-modal">
                     <img src={checkIcon} alt="Success Icon" />
                     <h3>Thanks for your support!</h3>
