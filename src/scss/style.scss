@@ -112,7 +112,7 @@ p{
 }
 
 // Section 1
-.section-1 {
+.section-1.wrapper {
     margin-top:-54px;
     text-align:center;
 }
@@ -403,3 +403,5 @@ p{
 .pledge-modal.hide{
     display: none;
 }
+
+@import 'responsive.scss'

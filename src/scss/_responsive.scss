@@ -1,0 +1,51 @@
+@media all and (min-width:726px) {
+    .wrapper{
+        margin: auto;
+        margin-bottom: 24px;
+        max-width: 725px;
+    }
+
+    .site-header,
+    .wrapper{
+        padding: 38px 45px;
+    }
+
+    .banner{
+        background-image: url('/images/image-hero-desktop.jpg');
+        min-height: 400px;
+    }
+
+    .section-1.wrapper{
+        margin-top: -92px;
+    }
+
+    .btn-wrap{
+        justify-content: space-between;
+    }
+
+    .btn-bookmark{
+        background-image: url('/images/icon-bookmark.svg');
+        background-repeat: no-repeat;
+        padding-left: 65px;
+        background-color: rgb(122 122 122 / 10%);
+        color: $neutral-hover;
+        display: inline-block;
+
+        &:hover{
+            opacity: 0.4;
+            background-color: rgb(122 122 122 / 10%);
+        }
+    }
+
+    .bookmark-wrapper span{
+        display: none;
+    }
+
+    .bookmark-wrapper.active{
+        .btn-bookmark{
+            background-image: url('/images/icon-bookmark-o.svg');
+            background-color: rgb(122 122 122 / 10%);
+            color: $primary-hover;
+        }
+    }
+}

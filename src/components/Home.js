@@ -1,4 +1,4 @@
-import React from 'react'
+import {React, useState} from 'react'
 import logo from '../images/logo-mastercraft.svg'
 import bookmark from '../images/icon-bookmark.svg'
 import Button from './Button'
@@ -6,6 +6,11 @@ import Count from './Count'
 import Cards from './Cards'
 
 const Home = ({btnClick}) => {
+    const [bookmarks, setBookmarks] = useState(false)
+
+    const bookmarked = () => {
+        setBookmarks(!bookmarks)
+      }
     return (
         <section className="home home-wrapper">
 
@@ -18,9 +23,9 @@ const Home = ({btnClick}) => {
                 <p>A beautiful &amp; handcrafted monitor stand to reduce neck and eye strain.</p>
                 <div className="btn-wrap">
                     <Button idBtn={'openModal'} text={'Back this project'} clicked={btnClick} />
-                    <div className="bookmark-wrapper">
+                    <div className={`bookmark-wrapper ${bookmarks ? 'active': ''}`}>
                         <span><img src={bookmark} alt="Icon Bookmark" /></span>
-                        <Button text={'Bookmark'} addClass={'btn-bookmark'} />
+                        <Button text={`${bookmarks ? 'Bookmarked': 'Bookmark'}`} addClass={`btn-bookmark`} clicked={bookmarked} ></Button>
                     </div>
                 </div>
             </section>
