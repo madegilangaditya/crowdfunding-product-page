@@ -80,6 +80,11 @@ p{
         .menu-item{
             padding: 25px;
             border-bottom: 1px solid $card-border-color;
+
+            a{
+                color: $neutral;
+                text-decoration: none;
+            }
         }
     }
 }
