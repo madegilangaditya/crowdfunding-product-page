@@ -1,4 +1,13 @@
 @media all and (min-width:726px) {
+    p{
+        font-size: 1rem;
+        line-height: 2;
+    }
+
+    h1{
+        font-size: 1.8625rem;
+    }
+
     .wrapper{
         margin: auto;
         margin-bottom: 24px;
@@ -105,4 +114,31 @@
         top: 0;
         right: -40px;
     }
+    
+    .card-title-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    .more{
+        margin-bottom: 0;
+    }
+
+    .card-title{
+        font-size: 1.25rem;
+    }
+
+    .qty-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .qty p{
+        margin-bottom: 0;
+    }
+
+    
 }
