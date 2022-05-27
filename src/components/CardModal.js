@@ -18,11 +18,20 @@ const CardModal = ({radioId, cardClass, title, subtitle, description, qty, price
                     </div>
                     <div className="card-title-wrapper">
                         <div className="card-title">{title}</div>
-                        {subtitle?<p className="more">{subtitle}</p> : ''}
-                        
+                        {subtitle?<p className="more">{subtitle}</p> : ''} 
                     </div>
                 </div>    
-                <div className="description"><p>{description}</p></div>
+                <div className="description">
+                    <div className="card-title-wrapper desktop">
+                        <div className="card-title">{title}</div>
+                        {subtitle?<p className="more">{subtitle}</p> : ''}
+                        {price !== 0 ? 
+                        <div className="qty-wrapper desktop">
+                            <div className="qty"><p>{qty} <span>left</span></p></div>   
+                        </div> : ""} 
+                    </div>
+                    <p>{description}</p>
+                </div>
                 {price !== 0 ? 
                 <div className="qty-wrapper">
                     <div className="qty"><p>{qty} <span>left</span></p></div>   

@@ -259,6 +259,14 @@ p{
     padding-bottom: 200px;
     z-index: -1;
 
+    .card-title-wrapper.desktop{
+        display: none;
+    }
+
+    .qty-wrapper.desktop{
+        display: none;
+    }
+
     .wrapper{
         top: 25%;
     }
@@ -339,6 +347,7 @@ p{
         height:1px;
         background:$card-border-color;
         position: absolute;
+        top: 0;
     }
 
     .card:not(.out-of-stock):hover,

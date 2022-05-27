@@ -138,7 +138,62 @@
 
     .qty p{
         margin-bottom: 0;
+        font-size: 1.25rem;
     }
 
+    // modal card
+    .modal {
+        
+        .card{
+            display: flex;
+            gap: 25px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .card-title-wrapper{
+            display: none;
+        }
+
+        .card-title-wrapper.desktop{
+            display: flex;
+            justify-content: flex-start;
+            gap: 25px;
+        }
+
+        .qty-wrapper{
+            display: none;
+        }
+
+        .qty-wrapper.desktop{
+            display: block;
+            margin-left: auto;
+        }
+
+        .description{
+            flex: 0 0 92%;
+        }
+
+        .pledge-wrapper.active{
+            flex: 0 0 100%;
+            display: flex;
+            padding: 20px 0;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .pledge-btn-wrapper{
+            justify-content: flex-end;
+        }
+
+        .pledge-input-wrapper,
+        .btn{
+            flex: 0 0 30%;
+        }
+    }
+
+    .radio-wrapper{
+        padding-top: 10px;
+    }
     
 }
