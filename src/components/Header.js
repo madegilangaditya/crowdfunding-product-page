@@ -1,19 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import logo from '../images/logo.svg'
 import hamburger from '../images/icon-hamburger.svg'
 import closeMenu from '../images/icon-close-menu.svg'
+import PledgeContext from '../context/PledgeContext'
 
 const Header = () => {
-    const [openMenu, setOpenMenu] = useState(false)
-
-    const menuClicked = ()=>{
-        const menuWrap = document.querySelector('.main-navigation-wrap')
-        const bgWrap = document.querySelector('.bg-overlay')
-        
-        bgWrap.classList.toggle('active')
-        menuWrap.classList.toggle('active')
-        setOpenMenu(!openMenu)
-    }
+    const { openMenu, menuClicked } = useContext(PledgeContext)
 
     return (
         <section className="header banner">

@@ -1,16 +1,14 @@
-import {React, useState} from 'react'
+import { React, useContext } from 'react'
 import logo from '../images/logo-mastercraft.svg'
 import bookmark from '../images/icon-bookmark.svg'
 import Button from './Button'
 import Count from './Count'
 import Cards from './Cards'
+import PledgeContext from '../context/PledgeContext'
 
-const Home = ({btnClick}) => {
-    const [bookmarks, setBookmarks] = useState(false)
-
-    const bookmarked = () => {
-        setBookmarks(!bookmarks)
-      }
+const Home = () => {
+    const { openModalClick, bookmarks, bookmarked } = useContext(PledgeContext)
+   
     return (
         <section className="home home-wrapper">
 
@@ -22,15 +20,14 @@ const Home = ({btnClick}) => {
                 <h1>Mastercraft Bamboo Monitor Riser</h1>
                 <p>A beautiful &amp; handcrafted monitor stand to reduce neck and eye strain.</p>
                 <div className="btn-wrap">
-                    <Button idBtn={'openModal'} text={'Back this project'} clicked={btnClick} />
+                    <Button idBtn={'openModal'} text={'Back this project'} clicked={openModalClick} />
                     <div className={`bookmark-wrapper ${bookmarks ? 'active': ''}`}>
                         <span><img src={bookmark} alt="Icon Bookmark" /></span>
                         <Button text={`${bookmarks ? 'Bookmarked': 'Bookmark'}`} addClass={`btn-bookmark`} clicked={bookmarked} ></Button>
                     </div>
                 </div>
             </section>
-
-            
+          
             <section className="wrapper section-2">
                 <div className="count-wrapper">
                     <Count 
@@ -60,7 +57,7 @@ const Home = ({btnClick}) => {
                     <p>Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer to allow notepads, pens, and USB sticks to be stored under the stand.</p>
                 </div>
 
-                <Cards modalOpen={btnClick}/>
+                <Cards modalOpen={openModalClick}/>
 
             </section>
 

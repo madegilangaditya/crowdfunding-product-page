@@ -1,43 +1,19 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useContext } from 'react'
 import CardModal from './CardModal'
 import closeModalIcon from '../images/icon-close-modal.svg'
 import checkIcon from '../images/icon-check.svg'
 import Button from './Button'
+import PledgeContext from '../context/PledgeContext'
 
 
-const Modal = ({onShow, onClose}) => {
-    const pledge =  document.querySelector('.pledge-modal')
-    const [card, setCard] = useState()
-    const cardClick = (id) =>{
-        setCard(id)
-    }
-
-    const [thankyou, setThankyou] = useState(false)
-    const cardConfirm = () =>{
-        setThankyou(!thankyou)
-        pledge.classList.contains('hide')?pledge.classList.remove('hide'):pledge.classList.add('hide')
-    }
-
-    // const modalClose = () =>{
-    //     setThankyou(false)
-    // }
-    // ${thankyou ? 'hide':''}
-    useEffect(() => {
-        setThankyou(false)
-        
-    }, [onClose])
-
-    // useEffect(() => {
-    //     const pledge =  document.querySelector('.pledge-modal')
-    //     pledge.classList.remove('hide')
-    // }, [onShow])
-
+const Modal = ({onClose}) => {
+    const {showModal, openModalClick, thankyou, card, cardClick, cardConfirm} = useContext(PledgeContext)
     return (
-        <section className={`modal modal-wrapper ${onShow ?'active' : ''}`}>
+        <section className={`modal modal-wrapper ${showModal ?'active' : ''}`}>
             <div className={`pledge-modal wrapper `}>
                 <div className="title-modal">
-                    <span className='close-modal' onClick={onClose}><img src={closeModalIcon} alt="close modal" /></span>
+                    <span className='close-modal' onClick={openModalClick}><img src={closeModalIcon} alt="close modal" /></span>
                     <h3>Back this project</h3>
                     <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
                 </div>
@@ -99,7 +75,7 @@ const Modal = ({onShow, onClose}) => {
                     <p>Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign is completed.</p>
                 </div>
                 
-                <Button text={'Got it!'} clicked={onClose} />
+                <Button text={'Got it!'} clicked={openModalClick} />
             </div>
         </section>
     )

@@ -2,7 +2,7 @@ import React from 'react'
 import Button from './Button'
 
 
-const Card = ({cardClass, idCard, title, subtitle, description, qty, clicked, btnClass}) => {
+const Card = ({item, clicked, btnClass}) => {
     const checkRadio = () =>{
         document.querySelector(`#${btnClass}`).checked = true;
         if(document.querySelector(`#${btnClass}`).checked === true){
@@ -17,14 +17,14 @@ const Card = ({cardClass, idCard, title, subtitle, description, qty, clicked, bt
     }
     
     return (
-        <div id={idCard} className={`card ${cardClass ? cardClass : ''}`} onClick={checkRadio}>
+        <div id={`card-item-${item.id}`} className={`card card-item-${item.id ? item.id : ''} ${item.qty === 0 ? 'out-of-stock':''}`} onClick={checkRadio}>
             <div className="card-title-wrapper">
-                <div className="card-title">{title}</div>
-                <p className="more">{subtitle}</p>
+                <div className="card-title">{item.title}</div>
+                <p className="more">{item.subtitle}</p>
             </div>
-            <div className="description"><p>{description}</p></div>
+            <div className="description"><p>{item.description}</p></div>
             <div className="qty-wrapper">
-                <div className="qty"><p>{qty} <span>left</span></p></div>
+                <div className="qty"><p>{item.qty} <span>left</span></p></div>
                 <Button text={'Select Reward'} clicked={clicked} addClass={btnClass}/>
             </div>
         </div>
