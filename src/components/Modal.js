@@ -25,7 +25,7 @@ const Modal = () => {
 
                 {pledge.map((item)=>(
                     
-                    <CardModal key={item.id} item={item} radioId={`support${item.id}`} contClick={cardConfirm} onCardClick={card}/>
+                    <CardModal key={item.id} item={item} radioId={`support${item.id}`} contClick={() => cardConfirm(item.id,item.qty)} onCardClick={card}/>
                 ))}
                     
                 </div>

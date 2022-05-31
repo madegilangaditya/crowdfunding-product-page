@@ -84,18 +84,15 @@ export const PledgeProvider = ({children}) => {
     }
 
     const cardConfirm = (id, newQty) =>{
+
         
         setPledge(
-            pledge.map((item) => (item.id === id ? { qty: newQty} : item))
+            pledge.map((item) => (item.id === id ? { ...item, qty: newQty - 1} : item))
         )
         const pledges =  document.querySelector('.pledge-modal')
         setThankyou(!thankyou)
         pledges.classList.contains('hide') ? pledges.classList.remove('hide') : pledges.classList.add('hide')
     }
-
-    
-
-    
 
     return <PledgeContext.Provider value={{
         pledge,
