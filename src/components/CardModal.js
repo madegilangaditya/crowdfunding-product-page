@@ -42,7 +42,7 @@ const CardModal = ({item, radioId, contClick, onCardClick}) => {
                     <p>Enter your pledge</p>
                     <div className="pledge-btn-wrapper">
                         <div className="pledge-input-wrapper">
-                            <input type="number" name="pledge" id="" defaultValue={item.price} />
+                            <input type="number" name="pledge" defaultValue={item.price} />
                         </div>
                         <Button text={'Continue'} clicked={contClick}/>
                     </div>
