@@ -8,7 +8,7 @@ const Header = () => {
     const { openMenu, menuClicked } = useContext(PledgeContext)
 
     return (
-        <div className="header banner">
+        <div role="navigation" className="header banner">
             <header className="site-header">
                 <div className="logo-wrapper">
                     <img src={logo} alt="Logo" />
@@ -26,7 +26,7 @@ const Header = () => {
                     </nav>
                 </div>
             </header>
-        </div>
+        </div >
     )
 }
 

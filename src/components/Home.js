@@ -10,7 +10,7 @@ const Home = () => {
     const { openModalClick, bookmarks, bookmarked, backers, backed } = useContext(PledgeContext)
    
     return (
-        <section className="home home-wrapper">
+        <section className="home home-wrapper" role="main">
 
             <section className="wrapper section-1">
                 <div className="img-wrap">
