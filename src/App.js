@@ -21,12 +21,12 @@ function App() {
 
   return (
     <PledgeProvider>
-      <div className="App">
+      <main className="App">
         <div className='bg-overlay'></div>
         <Header/>
         <Home />
         <Modal />
-      </div>
+      </main>
     </PledgeProvider>
     
   );
