@@ -7,11 +7,20 @@ export const PledgeProvider = ({children}) => {
 
     const [pledge, setPledge] = useState([
         {
+            id:1,
+            title : "Pledge with no reward",
+            subtitle : "",
+            description : "Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.",
+            qty : 10,
+            price : 0,
+        },
+        {
             id:2,
             title : "Bamboo Stand",
             subtitle : "Pledge $25 or more",
             description : "You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.",
             qty : 101,
+            price : 25,
         },
         {
             id:3,
@@ -19,6 +28,7 @@ export const PledgeProvider = ({children}) => {
             subtitle : "Pledge $75 or more",
             description : "You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.",
             qty : 64,
+            price : 75,
         },
         {
             id:4,
@@ -26,6 +36,7 @@ export const PledgeProvider = ({children}) => {
             subtitle : "Pledge $200 or more",
             description : "You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.",
             qty : 0,
+            price : 200,
         }
     ])
 
@@ -56,11 +67,11 @@ export const PledgeProvider = ({children}) => {
         
     }, [openModalClick])
 
-    const addPledge = (id) =>{
-        setPledge(
-            pledge.map((item) => (item.id === id ? { qty: item.qty - 1} : item))
-        )
-    }
+    // const addPledge = (id) =>{
+    //     setPledge(
+    //         pledge.map((item) => (item.id === id ? { qty: item.qty - 1} : item))
+    //     )
+    // }
 
     // Bookmark state
     const bookmarked = () => {
@@ -72,10 +83,14 @@ export const PledgeProvider = ({children}) => {
         setCard(id)
     }
 
-    const cardConfirm = () =>{
-        const pledge =  document.querySelector('.pledge-modal')
+    const cardConfirm = (id, newQty) =>{
+        
+        setPledge(
+            pledge.map((item) => (item.id === id ? { qty: newQty} : item))
+        )
+        const pledges =  document.querySelector('.pledge-modal')
         setThankyou(!thankyou)
-        pledge.classList.contains('hide')?pledge.classList.remove('hide'):pledge.classList.add('hide')
+        pledges.classList.contains('hide') ? pledges.classList.remove('hide') : pledges.classList.add('hide')
     }
 
     
@@ -94,7 +109,6 @@ export const PledgeProvider = ({children}) => {
         menuClicked,
         bookmarked,
         openModalClick,
-        addPledge,
     }}>
         {children}
     </PledgeContext.Provider>

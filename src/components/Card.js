@@ -17,7 +17,7 @@ const Card = ({item, clicked, btnClass}) => {
     }
     
     return (
-        <div id={`card-item-${item.id}`} className={`card card-item-${item.id ? item.id : ''} ${item.qty === 0 ? 'out-of-stock':''}`} onClick={checkRadio}>
+        <div key={item.id} id={`card-item-${item.id}`} className={`card card-item-${item.id ? item.id : ''} ${item.qty === 0 ? 'out-of-stock':''}`} onClick={checkRadio}>
             <div className="card-title-wrapper">
                 <div className="card-title">{item.title}</div>
                 <p className="more">{item.subtitle}</p>
