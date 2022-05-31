@@ -7,7 +7,7 @@ import Cards from './Cards'
 import PledgeContext from '../context/PledgeContext'
 
 const Home = () => {
-    const { openModalClick, bookmarks, bookmarked } = useContext(PledgeContext)
+    const { openModalClick, bookmarks, bookmarked, backers, backed } = useContext(PledgeContext)
    
     return (
         <section className="home home-wrapper">
@@ -31,12 +31,12 @@ const Home = () => {
             <section className="wrapper section-2">
                 <div className="count-wrapper">
                     <Count 
-                        bigNumber="$89,914"
+                        bigNumber={`$${backed.toLocaleString()}`}
                         description="of $100,000 backed"
                     />
                     
                     <Count 
-                        bigNumber="5,007"
+                        bigNumber={backers.toLocaleString()}
                         description="total backers"
                     />
 
@@ -46,7 +46,7 @@ const Home = () => {
                     />
                 </div>
                 <div className="scroll-bar">
-                    <progress id="count" value="89.914" max="100">  </progress>
+                    <progress id="count" value={backed} max="100000">  </progress>
                 </div>
             </section>
 

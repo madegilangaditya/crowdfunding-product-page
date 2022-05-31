@@ -45,6 +45,8 @@ export const PledgeProvider = ({children}) => {
     const [openMenu, setOpenMenu] = useState(false)
     const [thankyou, setThankyou] = useState(false)
     const [card, setCard] = useState()
+    const [backed, setBacked] = useState(89914)
+    const [backers, setBackers] = useState(5007)
 
     // Header fuction
     const menuClicked = ()=>{
@@ -83,12 +85,14 @@ export const PledgeProvider = ({children}) => {
         setCard(id)
     }
 
-    const cardConfirm = (id, newQty) =>{
-
+    const cardConfirm = (id, newQty, price) =>{
+        setBacked(backed + price)
+        setBackers(backers + 1)
         
         setPledge(
             pledge.map((item) => (item.id === id ? { ...item, qty: newQty - 1} : item))
         )
+    
         const pledges =  document.querySelector('.pledge-modal')
         setThankyou(!thankyou)
         pledges.classList.contains('hide') ? pledges.classList.remove('hide') : pledges.classList.add('hide')
@@ -101,6 +105,8 @@ export const PledgeProvider = ({children}) => {
         openMenu,
         card,
         thankyou,
+        backed,
+        backers,
         cardConfirm,
         cardClick,
         menuClicked,
