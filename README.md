@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/responsive-landing-page-using-react-js-qg4bLRkl2e](https://www.frontendmentor.io/solutions/responsive-landing-page-using-react-js-qg4bLRkl2e)
 - Live Site URL: [https://madegilangaditya-crowdfunding.netlify.app/](https://madegilangaditya-crowdfunding.netlify.app/)
 
 ## My process
